@@ -52,51 +52,14 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 
 Place(TargetType.ARM, PrecisionType.FP32, DataLayoutType.NCHW)
 
-- TargetType
+|TargetType|PrecisionType|DataLayoutType|
+|-|-|-|
+|CUDA|FP16|NCHW
+|ARM|FP32|NHWC
+|OpenCL|INT8|ImageDefault
+|FPGA|INT16|ImageFolder
+|NPU|INT32|ImageNW
+|Any|INT64|Any
+||BOOL|
+||Any|
 
-> "Host": kHost
-"X86": kX86
-
-> "CUDA": kCUDA
-
-> "ARM": kARM
-
-> "OpenCL": kOpenCL
-
-> "FPGA": kFPGA
-
-> "NPU": kNPU
-
-> "Any": kAny
-
-- PrecisionType
-
-"FP16": kFP16
-
-"FP32": kFloat
-
-"INT8": kInt8
-
-"INT16": kInt16
-
-"INT32": kInt32
-
-"INT64": kInt64
-
-"BOOL": kBool
-
-"Any": kAny
-
-- DataLayoutType
-
-"NCHW": kNCHW
-
-"NHWC": kNHWC
-
-"ImageDefault": kImageDefault
-
-"ImageFolder": kImageFolder
-
-"ImageNW": kImageNW
-
-"Any": kAny
