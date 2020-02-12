@@ -20,7 +20,7 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 
 - 配置环境
 
-   从源码编译paddle2lite前需要先，[配置Paddle-Lite开发环境](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/source_compile/)
+   源码编译paddle2lite前，[配置Paddle-Lite开发环境](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/source_compile/)
 
 - 编译
 
@@ -79,4 +79,4 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 
 说明：
 
-如果是int8量化的paddle模型，请指定PrecisionType.INT8。
+如果是int8量化的paddle模型，可指定PrecisionType.INT8。
