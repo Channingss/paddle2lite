@@ -53,21 +53,21 @@ Place(TargetType.ARM, PrecisionType.FP32, DataLayoutType.NCHW)
 
 - TargetType
 
-"Host": kHost
+> "Host": kHost
 
-"X86": kX86
+> "X86": kX86
 
-"CUDA": kCUDA
+> "CUDA": kCUDA
 
-"ARM": kARM
+> "ARM": kARM
 
-"OpenCL": kOpenCL
+> "OpenCL": kOpenCL
 
-"FPGA": kFPGA
+> "FPGA": kFPGA
 
-"NPU": kNPU
+> "NPU": kNPU
 
-"Any": kAny
+> "Any": kAny
 
 - PrecisionType
 
