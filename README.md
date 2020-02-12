@@ -15,6 +15,7 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 
 - compile
 - pip
+
 ## 2.1 compile
 从源码编译model_optimize_tool前需要先，[安装Paddle-Lite开发环境](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/source_compile/)
 
@@ -42,15 +43,18 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 
 |parameter| mean|
 |-|-|
-|model_dir|model_param_dir|
-|model_file|model_path|
-|param_file|param_path|
-|optimize_out_type|'protobuf' or 'naive_buffer'|
-|optimize_out|output_optimize_model_dir|
-|valid_targets| [Place](#Place)(TargetType, PrecisionType, DataLayoutType)|
-|prefer_int8_kernel|true / false|
-|record_tailoring_info|true / false|
+| model_dir| 待优化的PaddlePaddle模型（非combined形式）的路径|
+| model_file| 待优化的PaddlePaddle模型（combined形式）的网络结构文件路径|
+| param_file| 待优化的PaddlePaddle模型（combined形式）的权重文件路径|
+| optimize_out_type| 输出模型类型，目前支持两种类型：protobuf和naive_buffer，其中naive_buffer是一种更轻量级的序列化/反序列化实现。若您需要在mobile端执行模型预测，请将此选项设置为naive_buffer。默认为protobuf|
+| optimize_out| 优化模型的输出路径|
+| valid_targets| 指定模型可执行的backend，默认为arm。目前可支持x86、arm、opencl、npu、xpu，可以同时指定多个backend(以空格分隔)，Model Optimize Tool将会自动选择最佳方式。如果需要支持华为NPU（Kirin 810/990 Soc搭载的达芬奇架构NPU），应当设置为npu, arm|
+| prefer_int8_kernel| 若待优化模型为int8量化模型（如量化训练得到的量化模型），则设置该选项为true以使用int8内核函数进行推理加速，默认为false|
+| record_tailoring_info| 当使用根据模型裁剪库文件功能时，则设置该选项为true，以记录优化后模型含有的kernel和OP信息，默认为false|
 
+说明：
+model_dir：待优化的PaddlePaddle模型（非combined形式）的路径
+待优化的PaddlePaddle模型（combined形式）的网络结构文件路径。
 ## 3.2 Place
 - API:
 
