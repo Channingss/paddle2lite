@@ -11,7 +11,7 @@ place = [Place(TargetType.ARM, PrecisionType.float32)]
 optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, valid_targets, record_tailoring_info)
 ```
 
-# 2. Usage
+# 2. Install
 
 ## 2.1 compile
 从源码编译model_optimize_tool前需要先，[安装Paddle-Lite开发环境](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/source_compile/)
@@ -28,25 +28,26 @@ git checkout <release-version-tag>
 
 pip install -i https://test.pypi.org/simple/ paddle2lite
 
-## 2.2 API
+## 2.2 Usage
 
 ### 2.2.1 optimize
 
 - API:
-
 optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, valid_targets, record_tailoring_info)
+
 - parameter：
-   model_dir: model_param_dir
-   model_file: model_path
-   param_file: param_path
-   optimize_out_type: protobuf or naive_buffer
-   optimize_out: output_optimize_model_dir
-   valid_targets: arm / opencl / x86 / npu / xpu
-   record_tailoring_info: true / false
-   
-   future add：
-   prefer_int8_kernel: true / false
-   
+
+|parameter| mean|
+|-|-|
+|model_dir|model_param_dir|
+|model_file|model_path|
+|param_file|param_path|
+|optimize_out_type|'protobuf' or 'naive_buffer'|
+|optimize_out|output_optimize_model_dir|
+|valid_targets| Place(TargetType, PrecisionType, DataLayoutType)|
+|prefer_int8_kernel|true / false|
+|record_tailoring_info|true / false|
+
 ### 2.2.2 Place
 
 Place(TargetType.ARM, PrecisionType.FP32, DataLayoutType.NCHW)
@@ -54,8 +55,7 @@ Place(TargetType.ARM, PrecisionType.FP32, DataLayoutType.NCHW)
 - TargetType
 
 > "Host": kHost
-
-> "X86": kX86
+"X86": kX86
 
 > "CUDA": kCUDA
 
