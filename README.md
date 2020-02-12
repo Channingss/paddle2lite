@@ -19,7 +19,7 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 ```
 git clone https://github.com/Channingss/paddle2lite.git
 cd paddle2lite
-git checkout <release-version-tag>
+git checkout release/2.2.0
 ./lite/tools/build.sh --py_version=3.6 build_optimize_tool
 ```
 
