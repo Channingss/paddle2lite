@@ -75,7 +75,7 @@ lite_option(LITE_BUILD_TAILOR "Enable tailoring library according to model" OFF)
 # cv build options
 lite_option(LITE_WITH_CV  "Enable build cv image in lite" OFF)
 
-lite_option(PY_VERSION  "Python version" 3.6)
+lite_option(PY_VERSION  "Python version" ${PY_VERSION})
 
 # TODO(Superjomn) Remove WITH_ANAKIN option if not needed latter.
 if(ANDROID OR IOS OR ARMLINUX)
