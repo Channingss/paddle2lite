@@ -1,11 +1,8 @@
 # 1. introduction
 
-paddle2lite是一个工具, 用于将paddle的模型转换成Paddle-Lite可运行的格式。本项目在[model_optimize_tool](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/model_optimize_tool/)的基础上，对model_optimize_tool使用pybind11进行封装后，提供了python的接口方便用户调用。
+paddle2lite是一个工具，用于将paddle的模型转换成Paddle-Lite可运行的格式。本项目对[model_optimize_tool](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/model_optimize_tool/)使用pybind11进行封装后，提供了python的接口方便用户调用。
 
-# 2. Usage
-
-## 2.1 example 
-
+## 1.1 example 
 ```
 from deploy_paddle.lite import optimze, Place, TargetType, PrecisionType
    
@@ -13,6 +10,23 @@ place = [Place(TargetType.ARM, PrecisionType.float32)]
    
 optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, valid_targets, record_tailoring_info)
 ```
+
+# 2. Usage
+
+## 2.1 compile
+从源码编译model_optimize_tool前需要先，[安装Paddle-Lite开发环境]https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/source_compile/
+
+```
+git clone https://github.com/PaddlePaddle/Paddle-Lite.git
+cd Paddle-Lite
+git checkout <release-version-tag>
+./lite/tools/build.sh --py_version=3.6 build_optimize_tool
+```
+   
+## 2.2 pip 
+
+pip install -i https://test.pypi.org/simple/ paddle2lite
+
 ## 2.2 API
 
 ### 2.2.1 optimize
