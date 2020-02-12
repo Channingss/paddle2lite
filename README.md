@@ -3,9 +3,9 @@ paddle2lite is a python package for paddle, which can convert&optimize model for
 
 2. Usage
 2.1 example 
-   `from deploy_paddle.lite import optimze, Place, TargetType, PrecisionType
-   place = [Place(TargetType.ARM, PrecisionType.float32)]
-   optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, valid_targets, record_tailoring_info)`
+   `from deploy_paddle.lite import optimze, Place, TargetType, PrecisionType`
+   `place = [Place(TargetType.ARM, PrecisionType.float32)]`
+   `optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, valid_targets, record_tailoring_info)`
 
 2.2 API
 2.2.1 optimize
