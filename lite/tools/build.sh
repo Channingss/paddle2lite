@@ -21,6 +21,7 @@ OPTMODEL_DIR=""
 BUILD_TAILOR=OFF
 BUILD_CV=OFF
 SHUTDOWN_LOG=ON
+PY_VERSION=''
 
 readonly THIRDPARTY_TAR=https://paddle-inference-dist.bj.bcebos.com/PaddleLite/third-party-05b862.tar.gz
 
@@ -71,9 +72,16 @@ function build_model_optimize_tool {
       -DLITE_ON_MODEL_OPTIMIZE_TOOL=ON \
       -DWITH_TESTING=OFF \
       -DLITE_BUILD_EXTRA=ON \
-      -DWITH_MKL=OFF
-    make model_optimize_tool -j$NUM_PROC
-}
+      -DWITH_MKL=OFF \
+      -DPY_VERSION=$PY_VERSION
+    make lite -j$NUM_PROC
+
+    cp build.model_optimize_tool/lite/api/py_optimize/pybind/liblite.so paddle2lite/paddle2lite/
+    strip -s paddle2lite/paddle2lite/liblite.so
+    mv paddle2lite/paddle2lite/liblite.so paddle2lite/paddle2lite/lite.so
+    cd paddle2lite
+    python setup.py sdist bdist_wheel 
+ }
 
 function make_tiny_publish_so {
   local os=$1
@@ -151,7 +159,7 @@ function make_full_publish_so {
       -DLITE_OPTMODEL_DIR=$OPTMODEL_DIR \
       -DARM_TARGET_OS=${os} -DARM_TARGET_ARCH_ABI=${abi} -DARM_TARGET_LANG=${lang}
 
-  make publish_inference -j4
+  #make publish_inference -j4
   cd - > /dev/null
 }
 
@@ -358,7 +366,11 @@ function main {
                 BUILD_PYTHON="${i#*=}"
                 shift
                 ;;
-            --build_java=*)
+            --py_version=*)
+                PY_VERSION="${i#*=}"
+                shift
+                ;;
+              --build_java=*)
                 BUILD_JAVA="${i#*=}"
                 shift
                 ;;
