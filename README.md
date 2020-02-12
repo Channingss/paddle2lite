@@ -30,6 +30,7 @@ git checkout release/v2.2.0
 ```
 
 - 安装
+
 编译结果位于：paddle2lite/dist/paddle2lite-0.0.1-py**.whl，然后直接pip install paddle2lite-0.0.1-py**.whl
 
 ## 2.2 pip 
