@@ -77,3 +77,6 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 ||BOOL|
 ||Any|
 
+说明：
+
+如果是int8量化的paddle模型，请指定PrecisionType.INT8。
