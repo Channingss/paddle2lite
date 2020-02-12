@@ -1,6 +1,6 @@
 # 1. introduction
 
-paddle2lite is a python package for paddle, which can convert&optimize model for Paddle-Lite. For more detail, please refer to [model_optimize_tool](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/model_optimize_tool/)
+paddle2lite是一个工具, 用于将paddle的模型转换成Paddle-Lite可运行的格式。本项目在[model_optimize_tool](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/model_optimize_tool/)的基础上，对model_optimize_tool使用pybind11进行封装后，提供了python的接口方便用户调用。
 
 # 2. Usage
 
