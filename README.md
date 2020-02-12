@@ -4,7 +4,7 @@ paddle2lite是一个工具，用于将paddle的模型转换成Paddle-Lite可运�
 
 ## 1.1 example 
 ```
-from deploy_paddle.lite import optimze, Place, TargetType, PrecisionType
+from paddle2lite.lite import optimze, Place, TargetType, PrecisionType
    
 place = [Place(TargetType.ARM, PrecisionType.float32)]
    
@@ -20,7 +20,7 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 
 - 配置环境
 
-   从源码编译paddle2lite前需要先，[配置Paddle-Lite开发环境](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/source_compile/)
+   源码编译paddle2lite前，[配置Paddle-Lite开发环境](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/source_compile/)
 
 - 编译
 
@@ -54,7 +54,7 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 | model_dir| 待优化的PaddlePaddle模型（非combined形式）的路径|
 | model_file| 待优化的PaddlePaddle模型（combined形式）的网络结构文件路径|
 | param_file| 待优化的PaddlePaddle模型（combined形式）的权重文件路径|
-| optimize_out_type| 输出模型类型，目前支持两种类型：protobuf和naive_buffer，其中naive_buffer是一种更轻量级的序列化/反序列化实现。若您需要在mobile端执行模型预测，请将此选项设置为naive_buffer。默认为protobuf|
+| optimize_out_type| 输出模型类型，目前支持两种类型：'protobuf'和'naive_buffer'，其中naive_buffer是一种更轻量级的序列化/反序列化实现。若您需要在mobile端执行模型预测，请将此选项设置为naive_buffer。默认为protobuf|
 | optimize_out| 优化模型的输出路径|
 | valid_places| 指定模型可执行的[places](#Place)(TargetType, PrecisionType, DataLayoutType)可以同时指定多个places(list)，Model Optimize Tool将会自动选择最佳方式。
 | record_tailoring_info| 当使用根据模型裁剪库文件功能时，则设置该选项为true，以记录优化后模型含有的kernel和OP信息，默认为false|
@@ -77,3 +77,6 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 ||BOOL|
 ||Any|
 
+说明：
+
+如果是int8量化的paddle模型，可指定PrecisionType.INT8。
