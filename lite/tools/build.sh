@@ -75,6 +75,9 @@ function build_model_optimize_tool {
       -DWITH_MKL=OFF \
       -DPY_VERSION=$PY_VERSION
     make lite -j$NUM_PROC
+    if [ ! -d "paddle2lite/paddle2lite" ]; then
+        mkdir paddle2lite/paddle2lite
+    fi
     cp build.model_optimize_tool/lite/api/py_optimize/pybind/liblite.so paddle2lite/paddle2lite/
     strip -s paddle2lite/paddle2lite/liblite.so
     mv paddle2lite/paddle2lite/liblite.so paddle2lite/paddle2lite/lite.so
