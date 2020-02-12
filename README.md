@@ -1,6 +1,6 @@
 # 1. introduction
 
-paddle2lite是一个工具，用于将paddle的模型转换成Paddle-Lite可运行的格式。本项目对[model_optimize_tool](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/model_optimize_tool/)使用pybind11进行封装后，提供了python的接口方便用户调用。
+paddle2lite是一个工具，用于将paddle的模型转换成Paddle-Lite可运行的格式。本项目使用pybind11对model_optimize_tool进行封装，提供python接口方便用户调用。model_optimize_tool更详细的介绍请参考：[model_optimize_tool](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/model_optimize_tool/)。
 
 ## 1.1 example 
 ```
