@@ -13,6 +13,8 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 
 # 2. Install
 
+- compile
+- pip
 ## 2.1 compile
 从源码编译model_optimize_tool前需要先，[安装Paddle-Lite开发环境](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/source_compile/)
 
