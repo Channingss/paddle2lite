@@ -52,9 +52,6 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 | prefer_int8_kernel| 若待优化模型为int8量化模型（如量化训练得到的量化模型），则设置该选项为true以使用int8内核函数进行推理加速，默认为false|
 | record_tailoring_info| 当使用根据模型裁剪库文件功能时，则设置该选项为true，以记录优化后模型含有的kernel和OP信息，默认为false|
 
-说明：
-model_dir：待优化的PaddlePaddle模型（非combined形式）的路径
-待优化的PaddlePaddle模型（combined形式）的网络结构文件路径。
 ## 3.2 Place
 - API:
 
