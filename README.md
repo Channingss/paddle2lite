@@ -44,13 +44,13 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 |param_file|param_path|
 |optimize_out_type|'protobuf' or 'naive_buffer'|
 |optimize_out|output_optimize_model_dir|
-|valid_targets| Place(TargetType, PrecisionType, DataLayoutType)|
+|valid_targets| [Place](#Place)(TargetType, PrecisionType, DataLayoutType)|
 |prefer_int8_kernel|true / false|
 |record_tailoring_info|true / false|
 
 ### 2.2.2 Place
 
-Place(TargetType.ARM, PrecisionType.FP32, DataLayoutType.NCHW)
+<a id='Place'>Place</a>(TargetType.ARM, PrecisionType.FP32, DataLayoutType.NCHW)
 
 |TargetType|PrecisionType|DataLayoutType|
 |-|-|-|
