@@ -28,11 +28,12 @@ git checkout release/v2.2.0
 
 pip install -i https://test.pypi.org/simple/ paddle2lite
 
-## 2.2 Usage
+# 3. Usage
 
-### 2.2.1 optimize
+## 2.1 optimize
 
 - API:
+
 optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, valid_targets, record_tailoring_info)
 
 - parameter：
@@ -48,9 +49,12 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 |prefer_int8_kernel|true / false|
 |record_tailoring_info|true / false|
 
-### 2.2.2 Place
+## 2.2 Place
+- API:
 
 <a id='Place'>Place</a>(TargetType.ARM, PrecisionType.FP32, DataLayoutType.NCHW)
+
+- parameter：
 
 |TargetType|PrecisionType|DataLayoutType|
 |-|-|-|
