@@ -14,15 +14,16 @@ optimize(model_dir,model_file, param_file, optimize_out_type, optimize_out, vali
 # 2. Usage
 
 ## 2.1 compile
-从源码编译model_optimize_tool前需要先，[安装Paddle-Lite开发环境]https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/source_compile/
+从源码编译model_optimize_tool前需要先，[安装Paddle-Lite开发环境](https://paddlepaddle.github.io/Paddle-Lite/v2.2.0/source_compile/)
 
 ```
-git clone https://github.com/PaddlePaddle/Paddle-Lite.git
-cd Paddle-Lite
+git clone https://github.com/Channingss/paddle2lite.git
+cd paddle2lite
 git checkout <release-version-tag>
 ./lite/tools/build.sh --py_version=3.6 build_optimize_tool
 ```
-   
+
+编译结果位于paddle2lite/dist/**.wkl
 ## 2.2 pip 
 
 pip install -i https://test.pypi.org/simple/ paddle2lite
